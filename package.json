@@ -1,23 +1,43 @@
 {
-  "name": "yt-embed-music",
-  "version": "0.1.0",
+  "name": "enhanced-yt-embed",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@next/font": "13.1.2",
-    "@types/node": "18.11.18",
-    "@types/react": "18.0.26",
-    "@types/react-dom": "18.0.10",
-    "eslint": "8.31.0",
-    "eslint-config-next": "13.1.2",
-    "next": "13.1.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "4.9.4"
+    "@fontsource/inter": "^4.5.15",
+    "@fontsource/noto-sans-jp": "^4.5.12",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "@tanstack/react-query": "^4.22.0",
+    "@tanstack/react-query-devtools": "^4.22.0",
+    "axios": "^1.2.3",
+    "copy-to-clipboard": "^3.3.3",
+    "date-fns": "^2.29.3",
+    "framer-motion": "^8.5.0",
+    "jotai": "^1.13.1",
+    "jotai-devtools": "^0.1.0",
+    "react": "^18.2.0",
+    "react-contexify": "^6.0.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "react-range": "^1.8.14",
+    "react-youtube": "^10.1.0",
+    "tailwindcss-safe-area": "^0.2.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0",
+    "vite-plugin-pwa": "^0.14.1",
+    "vite-tsconfig-paths": "^4.0.5"
   }
 }

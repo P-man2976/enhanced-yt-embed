@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+
+	@apply overscroll-none bg-gradient-to-b from-neutral-800 to-neutral-900 text-slate-50 fixed h-screen w-full overflow-hidden pb-safe;
+}
+
+* {
+	@apply outline-none;
+	scrollbar-width: thin;
+	-webkit-overflow-scrolling: touch;
+}
+
+a {
+	@apply hover:underline underline-offset-2 decoration-1;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #181818;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #575757;
+}
+
+:root {
+	--contexify-menu-bgColor: rgba(40, 40, 40, 0.98);
+	--contexify-separator-color: #4c4c4c;
+	--contexify-separator-margin: 0.5rem 0;
+	--contexify-item-color: #fff;
+	--contexify-activeItem-color: #fff;
+	--contexify-activeItem-bgColor: rgba(255, 255, 255, 0.2);
+	--contexify-activeItem-radius: 0px;
+	--contexify-itemContent-padding: 0.4rem 0.75rem;
+}
+
+.contexify {
+	@apply rounded-xl shadow-lg px-0 py-4;
+}
+
+.contexify_item {
+	@apply rounded-none;
+}
