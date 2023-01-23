@@ -7,6 +7,7 @@ import {
 import { usePlayer, usePlayerStats } from '@/hooks/player';
 import ControlButton from './ControlButton';
 import { TbArrowsShuffle, TbRepeat, TbRepeatOnce } from 'react-icons/tb';
+import { useKbdCtrls } from '@/hooks/hotkeys';
 
 export default function PlaybackControls() {
   const {
@@ -19,6 +20,7 @@ export default function PlaybackControls() {
     toggleRepeat,
   } = usePlayer();
   const { playerState } = usePlayerStats();
+  useKbdCtrls();
 
   return (
     <div className="flex w-full justify-between items-center">

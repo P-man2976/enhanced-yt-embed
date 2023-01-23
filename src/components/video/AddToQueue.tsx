@@ -11,7 +11,7 @@ export default function AddToQueue() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="flex items-center space-x-4 p-2 backdrop-blur-md">
+    <div className="flex items-center space-x-4 p-2">
       <Icon className="h-8 w-8 text-slate-300" icon={TbPlaylistAdd} />
       <input
         aria-label='YouTube URL input field'

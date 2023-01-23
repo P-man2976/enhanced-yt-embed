@@ -43,7 +43,7 @@ export default function VideoQueue() {
         </div>
       </div>
       <Spacer />
-      <div className="sticky bottom-0 w-full">
+      <div className="sticky bottom-0 w-full backdrop-blur">
         <AddToQueue />
       </div>
     </div>
