@@ -25,7 +25,7 @@ export default function PlaybackControls() {
   return (
     <div className="flex w-full justify-between items-center">
       <ControlButton
-        className="w-6 h-6 md:w-8 w- h- md:h-8"
+        className="w-6 h-6 md:w-8 md:h-8"
         aria-label='Shuffle'
         name='Shuffle'
         icon={TbArrowsShuffle}
@@ -33,28 +33,28 @@ export default function PlaybackControls() {
         style={{ opacity: shuffleMode ? 1 : 0.5 }}
       />
       <ControlButton
-        className="w-10 h-10 md:w-12 w- h- md:h-12"
+        className="w-10 h-10 md:w-12 md:h-12"
         aria-label='Previous track'
         name='Previous track'
         icon={IoPlaySkipBack}
         onClick={previous}
       />
       <ControlButton
-        className="w-16 h-16 md:w-20 w- h- md:h-20"
+        className="w-16 h-16 md:w-20 md:h-20"
         aria-label='Play / Pause'
         name='Play / Pause'
         icon={playerState === 1 ? IoPause : IoPlay}
         onClick={togglePlay}
       />
       <ControlButton
-        className="w-10 h-10 md:w-12 w- h- md:h-12"
+        className="w-10 h-10 md:w-12 md:h-12"
         aria-label='Skip track'
         name='Skip track'
         icon={IoPlaySkipForward}
         onClick={skip}
       />
       <ControlButton
-        className="w-6 h-6 md:w-8 w- h- md:h-8"
+        className="w-6 h-6 md:w-8 md:h-8"
         aria-label='Repeat'
         name='Repeat'
         icon={repeatMode === 'one' ? TbRepeatOnce : TbRepeat}

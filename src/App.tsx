@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import ContextMenu, { ctxMenuID, queueMenuID } from "./components/common/ContextMenu";
 import Home from "./pages/Home";
+import Toast from "./components/common/Toast";
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -24,6 +25,7 @@ function App() {
 			<ContextMenu menuId={ctxMenuID} />
 			<ContextMenu menuId={queueMenuID} />
 			<Home />
+			<Toast />
 		</QueryClientProvider>
 	);
 }

@@ -3,18 +3,17 @@ import { playerAtom } from '@/atoms/player';
 import { usePlayerStats } from '@/hooks/player';
 import { useAtomValue } from 'jotai';
 import { IoVolumeHigh, IoVolumeLow } from 'react-icons/io5';
-import Icon from '../common/Icon';
-import Slider from '../common/Slider';
+import { Icon, Slider } from '../common';
 
 export default function Volume() {
   const player = useAtomValue(playerAtom);
   const { volume } = usePlayerStats();
-	// Client volume state for smooth volume adjust
-	const [sliderVolume, setSliderVolume] = useState(volume);
+  // Client volume state for smooth volume adjust
+  const [sliderVolume, setSliderVolume] = useState(volume);
 
   useEffect(() => {
     setSliderVolume(volume);
-  }, [volume])
+  }, [volume]);
 
   return (
     <div className="flex items-center space-x-8">

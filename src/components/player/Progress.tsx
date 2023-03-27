@@ -3,7 +3,7 @@ import { playerAtom } from '@/atoms/player';
 import { usePlayerStats } from '@/hooks/player';
 import { useAtomValue } from 'jotai';
 import { formatSeconds } from '@/modules/player';
-import Slider from '../common/Slider';
+import { Slider } from '../common/';
 
 export default function Progress() {
   const { currentTime, duration } = usePlayerStats();
@@ -40,8 +40,7 @@ export default function Progress() {
         >
           {isDuration
             ? formatSeconds(duration)
-            : `-${formatSeconds(duration - currentTime)}`
-          }
+            : `-${formatSeconds(duration - currentTime)}`}
         </p>
       </div>
     </div>

@@ -10,7 +10,7 @@ const HistoryList = React.memo(() => {
 
 	const onTitleClick = useCallback(({ videoId }: Queue) => play(videoId), [])
 
-  return (
+  return history.length ? (
     <>
       {history?.map(({ id, videoId }) => (
         <div
@@ -26,6 +26,10 @@ const HistoryList = React.memo(() => {
         </div>
       ))}
     </>
+  ) : (
+    <div className="grid h-full w-full py-4 grow place-content-center">
+      <p className="text-slate-300">履歴がありません</p>
+    </div>
   );
 });
 

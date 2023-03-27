@@ -14,6 +14,7 @@ export const useOEmbed = (videoId: string) =>
         })
       ).data,
       {
-        enabled: !!videoId
+        enabled: !!videoId,
+        retryOnMount: false,
       }
   );
