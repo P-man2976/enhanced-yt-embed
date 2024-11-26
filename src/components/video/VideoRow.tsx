@@ -2,11 +2,8 @@ import React from 'react';
 import { useContextMenu } from 'react-contexify';
 import { useOEmbed } from '@/hooks/youtube';
 import { Icon, Spacer } from '../common';
-import {
-  TbAlertCircle,
-  TbDots,
-  TbMenu,
-} from 'react-icons/tb';
+import { TbAlertCircle, TbDots, TbMenu } from 'react-icons/tb';
+import { Box, Flex, HStack, css } from '@kuma-ui/core';
 
 const VideoRow = React.memo(
   ({
@@ -31,26 +28,62 @@ const VideoRow = React.memo(
     const { data, isLoading, isError } = useOEmbed(videoId);
 
     return (
-      <div
-        className="group flex select-none items-center gap-4 p-2 transition-colors hover:bg-white/10"
+      <HStack
+        role="group"
+        alignItems="center"
+        gap="1rem"
+        p="0.5rem"
+        transition="all .2s ease"
+        _hover={{
+          bg: 'rgba(255, 255, 255, 0.1)',
+        }}
         onContextMenu={(event) => show({ id: menuId, event })}
       >
         {onDrag && (
-          <div
-            className="h-full w-5 shrink-0 cursor-move touch-none"
+          <Box
+            height="100%"
+            width="1.25rem"
+            flexShrink="0"
+            cursor="grab"
+            className={css`
+              touch-action: none;
+            `}
             onPointerDown={onDrag}
           >
-            <Icon className="text-slate-300" icon={TbMenu} />
-          </div>
+            <Icon color="colors.slate.300" icon={TbMenu} />
+          </Box>
         )}
-        <div className="relative -z-10 flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg">
-          <div className="flex aspect-video h-full items-center justify-center">
+        <Flex
+          position="relative"
+          width="3rem"
+          height="3rem"
+          flexShrink="0"
+          alignItems="center"
+          justify="center"
+          overflow="hidden"
+          borderRadius="0.5rem"
+          zIndex={-10}
+        >
+          <Flex
+            height="100%"
+            alignItems="center"
+            justify="center"
+            className={css`
+              aspect-ratio: 16 / 9;
+            `}
+          >
             {isLoading ? (
-              <div className="w-full h-full bg-slate-700 animate-pulse" />
+              <div className="h-full w-full animate-pulse bg-slate-700" />
             ) : isError ? (
-              <Icon className="w-8 h-8 text-yellow-500" icon={TbAlertCircle} />
+              <Icon
+                height="2rem"
+                width="2rem"
+                color="rgb(234 179 8)"
+                icon={TbAlertCircle}
+              />
             ) : (
               <img
+                loading="lazy"
                 width={data?.thumbnail_width}
                 height={data?.thumbnail_height}
                 src={data?.thumbnail_url ?? ''}
@@ -58,13 +91,13 @@ const VideoRow = React.memo(
                 style={{ width: '100%', objectFit: 'cover' }}
               />
             )}
-          </div>
-        </div>
-        <div className="flex-col w-full justify-between">
+          </Flex>
+        </Flex>
+        <div className="w-full flex-col justify-between">
           {isLoading ? (
-            <div className="h-4 w-4/5 rounded-md bg-slate-700 animate-pulse" />
+            <div className="h-4 w-4/5 animate-pulse rounded-md bg-slate-700" />
           ) : isError ? (
-            <p className="text-lg font-bold line-clamp-1 text-slate-300">
+            <p className="text-lg font-bold text-slate-300 line-clamp-1">
               動画情報を取得できませんでした
             </p>
           ) : (
@@ -76,12 +109,13 @@ const VideoRow = React.memo(
             </p>
           )}
           {isLoading ? (
-            <div className="h-3 w-2/5 mt-2 rounded-md bg-slate-700  animate-pulse" />
+            <div className="mt-2 h-3 w-2/5 animate-pulse rounded-md  bg-slate-700" />
           ) : (
             <a
               className="text-sm text-slate-300 line-clamp-1"
               target="_blank"
               href={data?.author_url ?? ''}
+              rel="noreferrer"
             >
               {data?.author_name}
             </a>
@@ -94,9 +128,9 @@ const VideoRow = React.memo(
           name="Open menu"
           onClick={(event) => show({ id: menuId, event })}
         >
-          <Icon className="h-4 w-4" icon={TbDots} />
+          <Icon width="1rem" height="1rem" icon={TbDots} />
         </button>
-      </div>
+      </HStack>
     );
   }
 );

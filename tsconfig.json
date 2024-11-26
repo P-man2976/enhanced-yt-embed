@@ -16,9 +16,9 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-		"@/*": ["./src/*"]
-	}
+      "@/*": ["./src/*"]
+    }
   },
-  "include": ["src"],
+  "include": ["src", "./kuma.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

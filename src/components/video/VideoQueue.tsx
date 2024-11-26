@@ -22,22 +22,22 @@ export default function VideoQueue() {
   }, []);
 
   return (
-    <div className="flex relative h-full w-full snap-y snap-proximity flex-col gap-4 overflow-y-auto rounded-xl">
+    <div className="relative flex h-full w-full snap-y snap-proximity flex-col gap-4 overflow-y-auto rounded-xl">
       <div className="snap-start">
         <div
-          className="sticky top-0 flex gap-4 items-center px-4 py-2 backdrop-blur z-10 select-none hover:cursor-pointer"
+          className="sticky top-0 z-10 flex select-none items-center gap-4 px-4 py-2 backdrop-blur hover:cursor-pointer"
           onClick={onHistoryToggle}
         >
           <Icon
             icon={TbChevronRight}
-            className={`w-6 h-6 transition-all ${
+            className={`h-6 w-6 transition-all ${
               isHistoryOpen ? 'rotate-90' : ''
             }`}
           />
           <p className="text-2xl font-bold">履歴</p>
           <Spacer />
           <button
-            className="px-4 rounded-lg transition-all"
+            className="rounded-lg px-4 transition-all"
             aria-label="Remove history"
             name="Remove history"
             onClick={(e) => {
@@ -56,13 +56,13 @@ export default function VideoQueue() {
       </div>
       <div className="snap-start">
         <div
-          className="sticky top-0 flex gap-4 items-center px-4 py-2 backdrop-blur z-10 select-none hover:cursor-pointer"
+          className="sticky top-0 z-10 flex select-none items-center gap-4 px-4 py-2 backdrop-blur hover:cursor-pointer"
           ref={queueRef}
           onClick={onQueueToggle}
         >
           <Icon
             icon={TbChevronRight}
-            className={`w-6 h-6 transition-all ${
+            className={`h-6 w-6 transition-all ${
               isQueueOpen ? 'rotate-90' : ''
             }`}
           />

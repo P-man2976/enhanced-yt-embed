@@ -15,10 +15,10 @@ export default function Toast() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="fixed flex justify-center md:justify-end items-center gap-4 top-0 w-full px-6 py-4 md:py-2 shadow-lg md:rounded-md z-50 bg-white/10 md:top-8 md:w-auto md:right-8"
+          className="fixed top-0 z-50 flex w-full items-center justify-center gap-4 bg-white/10 px-6 py-4 shadow-lg md:right-8 md:top-8 md:w-auto md:justify-end md:rounded-md md:py-2"
         >
-          <Icon icon={TbCheck} className="w-4 h-4 text-green-500 md:justify-self-start" />
-          <p className="font-bold text-lg">{text}</p>
+          <Icon icon={TbCheck} className="h-4 w-4 text-green-500 md:justify-self-start" />
+          <p className="text-lg font-bold">{text}</p>
         </motion.div>
       )}
     </AnimatePresence>

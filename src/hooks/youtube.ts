@@ -14,6 +14,7 @@ export const useOEmbed = (videoId: string) =>
         })
       ).data,
       {
+                staleTime: Infinity,
         enabled: !!videoId,
         retryOnMount: false,
       }

@@ -23,9 +23,9 @@ export default function PlaybackControls() {
   useKbdCtrls();
 
   return (
-    <div className="flex w-full justify-between items-center">
+    <div className="flex w-full items-center justify-between">
       <ControlButton
-        className="w-6 h-6 md:w-8 md:h-8"
+        className="h-6 w-6 md:h-8 md:w-8"
         aria-label='Shuffle'
         name='Shuffle'
         icon={TbArrowsShuffle}
@@ -33,28 +33,28 @@ export default function PlaybackControls() {
         style={{ opacity: shuffleMode ? 1 : 0.5 }}
       />
       <ControlButton
-        className="w-10 h-10 md:w-12 md:h-12"
+        className="h-10 w-10 md:h-12 md:w-12"
         aria-label='Previous track'
         name='Previous track'
         icon={IoPlaySkipBack}
         onClick={previous}
       />
       <ControlButton
-        className="w-16 h-16 md:w-20 md:h-20"
+        className="h-16 w-16 md:h-20 md:w-20"
         aria-label='Play / Pause'
         name='Play / Pause'
         icon={playerState === 1 ? IoPause : IoPlay}
         onClick={togglePlay}
       />
       <ControlButton
-        className="w-10 h-10 md:w-12 md:h-12"
+        className="h-10 w-10 md:h-12 md:w-12"
         aria-label='Skip track'
         name='Skip track'
         icon={IoPlaySkipForward}
         onClick={skip}
       />
       <ControlButton
-        className="w-6 h-6 md:w-8 md:h-8"
+        className="h-6 w-6 md:h-8 md:w-8"
         aria-label='Repeat'
         name='Repeat'
         icon={repeatMode === 'one' ? TbRepeatOnce : TbRepeat}

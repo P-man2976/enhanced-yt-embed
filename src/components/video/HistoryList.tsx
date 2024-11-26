@@ -27,7 +27,7 @@ const HistoryList = React.memo(() => {
       ))}
     </>
   ) : (
-    <div className="grid h-full w-full py-4 grow place-content-center">
+    <div className="grid h-full w-full grow place-content-center py-4">
       <p className="text-slate-300">履歴がありません</p>
     </div>
   );

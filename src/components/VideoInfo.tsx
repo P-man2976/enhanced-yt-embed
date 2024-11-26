@@ -1,32 +1,47 @@
 import { useOEmbed } from '@/hooks/youtube';
+import { Box, Image, Text, VStack, css } from '@kuma-ui/core';
 
 export default function VideoInfo({ id }: { id: string }) {
   const { data } = useOEmbed(id);
 
   return (
-    <div className="flex-col space-y-4">
-      <div className="relative aspect-video overflow-hidden rounded-lg">
+    <VStack gap={4}>
+      <Box
+        position="relative"
+        overflow="hidden"
+        borderRadius="lg"
+        className={css`
+          aspect-ratio: 16 / 9;
+        `}
+      >
         {data ? (
-          <img
+          <Image
             src={data?.thumbnail_url}
             alt="Thumbnail"
             style={{ objectFit: 'cover' }}
           />
         ) : (
-          <div className="animate-pulse h-full w-full bg-black/20" />
+          <Box
+            width="100%"
+            height="100%"
+            bg='rgba(0 0 0 20)'
+            className="h-full w-full animate-pulse bg-black/20"
+          />
         )}
-      </div>
+      </Box>
       {data ? (
-        <div className="flex-col">
-          <p className="font-bold text-xl line-clamp-1">{data?.title}</p>
-          <p className="">{data?.author_name}</p>
-        </div>
+        <VStack>
+          <Text fontSize="x-large" fontWeight="bold" textOverflow="ellipsis">
+            {data?.title}
+          </Text>
+          <Text>{data?.author_name}</Text>
+        </VStack>
       ) : (
-        <div className='space-y-4 animate-pulse'>
-          <div className="h-4 w-4/5 bg-black/20 rounded-lg" />
-          <div className="h-4 w-1/2 bg-black/20 rounded-lg" />
-        </div>
+        <VStack gap={4} className="animate-pulse space-y-4">
+          <Box height={4} width="80%" bg="rgba(0 0 0 20)" borderRadius="lg" />
+          <Box height={4} width="50%" bg="rgba(0 0 0 20)" borderRadius="lg" />
+        </VStack>
       )}
-    </div>
+    </VStack>
   );
 }

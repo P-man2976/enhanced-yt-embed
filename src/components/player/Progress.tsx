@@ -32,10 +32,10 @@ export default function Progress() {
           await player?.seekTo(progress, true);
         }}
       />
-      <div className="flex justify-between w-full">
+      <div className="flex w-full justify-between">
         <p className="text-slate-300">{formatSeconds(currentTime)}</p>
         <p
-          className="text-slate-300 cursor-pointer"
+          className="cursor-pointer text-slate-300"
           onClick={() => setIsDuration(!isDuration)}
         >
           {isDuration

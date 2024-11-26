@@ -21,7 +21,7 @@ export default function ControlButton({
       exit={{ scale: 0 }}
       {...rest}
     >
-      <Icon className="drop-shadow-lg text-slate-300" icon={icon} />
+      <Icon className="text-slate-300 drop-shadow-lg" icon={icon} />
     </motion.button>
   );
 }

@@ -19,7 +19,7 @@ export default function AddToQueue() {
       <Icon className="h-8 w-8 text-slate-300" icon={TbPlaylistAdd} />
       <input
         aria-label="YouTube URL input field"
-        className={`w-full rounded-none border-b border-slate-500 bg-transparent p-2 transition-all focus:border-slate-300 invalid:border-red-500 ${
+        className={`w-full rounded-none border-b border-slate-500 bg-transparent p-2 transition-all invalid:border-red-500 focus:border-slate-300 ${
           isInvalid && 'border-red-500'
         }`}
         type="url"
@@ -42,7 +42,7 @@ export default function AddToQueue() {
       <button
         aria-label="Paste link"
         name="Paste link"
-        className="rounded-lg p-2  hover:bg-white/20 transition-all"
+        className="rounded-lg p-2  transition-all hover:bg-white/20"
         onClick={async () => {
           const videoId = getYouTubeID(await navigator?.clipboard.readText());
           if (videoId?.length === 11) {

@@ -23,7 +23,7 @@ export default function YouTubePlayer() {
     })();
   }, [player, queue]);
 
-  const onReady = useCallback((e: YouTubeEvent<any>) => {
+  const onReady = useCallback((e: YouTubeEvent) => {
     setPlayer(e.target);
   }, []);
 
@@ -50,7 +50,7 @@ export default function YouTubePlayer() {
 
   return (
     <YouTube
-      className="w-full aspect-video"
+      className="aspect-video w-full"
       iframeClassName="w-full h-full shadow-md rounded-xl"
       onReady={onReady}
       onStateChange={onStateChange}

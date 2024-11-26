@@ -14,21 +14,21 @@ export default function PlayingInfo() {
           <a
             target="_blank"
             href={`https://youtu.be/${currentVideo?.videoId}`}
-            className="block font-bold text-xl"
+            className="block text-xl font-bold" rel="noreferrer"
           >
             {data?.title}
           </a>
           <a
             target="_blank"
             href={data?.author_url ?? ''}
-            className="block text-lg text-slate-300"
+            className="block text-lg text-slate-300" rel="noreferrer"
           >
             {data?.author_name}
           </a>
         </div>
       ) : (
         <div className='flex-col'>
-          <p className='font-bold text-xl text-slate-300'>再生停止中</p>
+          <p className='text-xl font-bold text-slate-300'>再生停止中</p>
         </div>
       )}
     </div>

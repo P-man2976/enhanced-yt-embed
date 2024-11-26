@@ -1,0 +1,6 @@
+dist/
+dev-dist/
+node_modules/
+public/
+
+i18next-scanner.config.js

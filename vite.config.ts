@@ -1,17 +1,31 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
-import tsconfigPaths from "vite-tsconfig-paths";
-import { VitePWA } from "vite-plugin-pwa";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import { VitePWA } from 'vite-plugin-pwa';
+import KumaUI from '@kuma-ui/vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
+    KumaUI(),
     tsconfigPaths(),
     VitePWA({
       registerType: 'autoUpdate',
       devOptions: {
         enabled: true,
+      },
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,gif,svg,woff,woff2}'],
+        runtimeCaching:[
+          {
+            urlPattern: /^https:\/\/i.ytimg.com\/.*.png$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'YouTube thumbnails',
+            }
+          }
+        ]
       },
       manifest: {
         theme_color: '#262626',
@@ -22,6 +36,7 @@ export default defineConfig({
         name: 'Enhanced YouTube embed',
         short_name: 'Enhanced YTE',
         description: 'Enhanced YouTube embed player.',
+
         icons: [
           {
             src: '/icon-192x192.png',

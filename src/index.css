@@ -2,13 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-#root {
+/* #root {
 
 	@apply overscroll-none bg-gradient-to-b from-neutral-800 to-neutral-900 text-slate-50 fixed h-screen w-full overflow-hidden pb-safe;
-}
+} */
 
 * {
-	@apply outline-none;
 	scrollbar-width: thin;
 	-webkit-overflow-scrolling: touch;
 }

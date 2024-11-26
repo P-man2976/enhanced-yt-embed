@@ -17,7 +17,7 @@ export default function Volume() {
 
   return (
     <div className="flex items-center space-x-8">
-      <Icon className="w-12 h-12 text-slate-300" icon={IoVolumeLow} />
+      <Icon className="h-12 w-12 text-slate-300" icon={IoVolumeLow} />
       {/* <input
         type="range"
         className="w-full"
@@ -39,7 +39,7 @@ export default function Volume() {
           player?.setVolume(values[0]);
         }}
       />
-      <Icon className="w-12 h-12 text-slate-300" icon={IoVolumeHigh} />
+      <Icon className="h-12 w-12 text-slate-300" icon={IoVolumeHigh} />
     </div>
   );
 }

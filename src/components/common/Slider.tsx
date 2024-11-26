@@ -27,7 +27,7 @@ export default function Slider({
             scaleY: 1.75,
             transition: { duration: 0.1, ease: 'easeOut' },
           }}
-          className="flex w-full h-2 bg-slate-300/20 rounded-full shadow-md overflow-hidden touch-none"
+          className="flex h-2 w-full touch-none overflow-hidden rounded-full bg-slate-300/20 shadow-md"
           {...props}
         >
           <div
@@ -47,7 +47,7 @@ export default function Slider({
       )}
       renderThumb={({ props }) => (
         <div
-          className="w-0 h-0 bg-red-400"
+          className="h-0 w-0 bg-red-400"
           aria-label="Player seek bar"
           {...props}
         />
